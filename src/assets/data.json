@@ -7,7 +7,7 @@
     "members": "100",
     "receipts": "100",
     "period": "2 недели",
-    "designer": "Шаблон PromoKit"
+    "design": "Шаблон PromoKit"
   },
   {
     "id": 2,
@@ -17,7 +17,7 @@
     "members": "2 000",
     "receipts": "3 000",
     "period": "1 месяц",
-    "designer": "Экспресс-лендинг"
+    "design": "Экспресс-лендинг"
   },
   {
     "id": 3,
@@ -27,7 +27,7 @@
     "members": "4 000",
     "receipts": "5 000",
     "period": "3 месяца",
-    "designer": "Bafsy.Builder"
+    "design": "Bafsy.Builder"
   },
   {
     "id": 4,

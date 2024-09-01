@@ -27,8 +27,8 @@
       <p class="card__item" v-if="item.members"><span>{{ item.members }}</span> Участников</p>
       <p class="card__item" v-if="item.receipts"><span>{{ item.receipts }}</span> Чеков</p>
       <p class="card__item" v-if="item.period"><span>{{ item.period }}</span> Период</p>
-      <p class="card__item" v-if="item.designer"><span>{{ item.designer }}</span> Конструктор</p>
-      <button class="card__btn">Запустить</button>
+      <p class="card__item" v-if="item.design"><span>{{ item.design }}</span> Конструктор</p>
+      <button class="card__btn" @click="openModal">Запустить</button>
     </div>
   </li>
 </template>
@@ -37,6 +37,7 @@
   .card {
     max-width: 265px;
     color: $color-accent;
+    margin-bottom: 40px;
 
     &__heading-wrapper {
       border-top-left-radius: 10px;

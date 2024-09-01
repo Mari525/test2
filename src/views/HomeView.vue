@@ -1,5 +1,6 @@
 <script setup>
   import Card from '../components/Card.vue'
+  import Modal from '../components/Modal.vue'
 </script>
 
 <template>
@@ -8,6 +9,7 @@
     <ul class="main__list">
       <Card />
     </ul>
+    <Modal />
   </main>
 </template>
 
