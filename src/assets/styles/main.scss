@@ -1,0 +1,32 @@
+@import './fonts.scss';
+
+$font-primary: "Franklin Gothic Book", Arial, Helvetica, sans-serif;
+$font-heavy: "Franklin Gothic Heavy", Arial, Helvetica, sans-serif;
+$font-medium: "Franklin Gothic Medium", Arial, Helvetica, sans-serif;
+$font-demi: "Franklin Gothic Demi", Arial, Helvetica, sans-serif;
+$font-accent: "CharterITCBlack", 'Times New Roman', Times, serif;
+
+$color-accent: #151515;
+
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  color: $color-accent;
+}
+
+button {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+body {
+  max-width: 1178px;
+  margin: 0 auto;
+  padding-top: 43px;
+}
