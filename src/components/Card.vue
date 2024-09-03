@@ -1,16 +1,5 @@
-<script>
-  import data from '../assets/data.json'
-  export default {
-    data() {
-      return {
-        items: data
-      }
-  }
-};
-</script>
-
 <template>
-  <li class="card" v-for="item in items" :key="item.id">
+  <li class="card">
     <div class="card__heading-wrapper">
       <span class="card__tariff">
         Тариф
@@ -28,16 +17,39 @@
       <p class="card__item" v-if="item.receipts"><span>{{ item.receipts }}</span> Чеков</p>
       <p class="card__item" v-if="item.period"><span>{{ item.period }}</span> Период</p>
       <p class="card__item" v-if="item.design"><span>{{ item.design }}</span> Конструктор</p>
-      <button class="card__btn" @click="openModal">Запустить</button>
+      <button class="card__btn" @click="launch">Запустить</button>
     </div>
+    
   </li>
 </template>
 
+<script setup>
+import { defineProps, defineEmits } from 'vue';
+
+const props = defineProps({
+  item: {
+    type: Object,
+    required: true,
+  },
+});
+
+const emit = defineEmits();
+
+function launch() {
+  emit('openModal', props.item);
+}
+</script>
+
+
 <style lang="scss">
   .card {
-    max-width: 265px;
+    width: 265px;
     color: $color-accent;
     margin-bottom: 40px;
+    
+    &:nth-of-type(6n) {
+      margin-right: auto;
+    }
 
     &__heading-wrapper {
       border-top-left-radius: 10px;
