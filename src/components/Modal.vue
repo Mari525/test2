@@ -32,7 +32,7 @@ const newCard = ref({
 });
 
 function save() {
-  if (newCard.value.title && newCard.value.description && newCard.value.price) {
+  if (newCard.value.title && newCard.value.price) {
     emit('save', { ...newCard.value });
     resetForm();
   }

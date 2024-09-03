@@ -18,15 +18,26 @@
   </main>
 </template>
 
+
+
 <script setup>
-import { ref } from 'vue';
+import { ref, onMounted } from 'vue';
 import Card from '../components/Card.vue';
 import Modal from '../components/Modal.vue';
 import data from '../assets/data.json';
 
-const items = ref(data);
+const items = ref([]);
 const isModalOpen = ref(false);
 const selectedItem = ref(null);
+
+onMounted(() => {
+  const savedItems = localStorage.getItem('items');
+  if (savedItems) {
+    items.value = JSON.parse(savedItems);
+  } else {
+    items.value = data;
+  }
+});
 
 function openModal(item) {
   selectedItem.value = item;
@@ -39,10 +50,13 @@ function closeModal() {
 }
 
 function addCard(newCard) {
-  items.value.push({ ...newCard, id: Date.now() });
+  const cardWithId = { ...newCard, id: Date.now() };
+  items.value.push(cardWithId);
+  localStorage.setItem('items', JSON.stringify(items.value));
   closeModal();
 }
 </script>
+
 
 
 
